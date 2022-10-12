@@ -1,6 +1,6 @@
 package pojo;
 
-import DAO.DAOcustomer;
+import DAO.DAOadmin;
 import DAO.DAOProduct;
 import java.util.List;
 import javax.faces.bean.ManagedBean;

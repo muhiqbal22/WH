@@ -186,13 +186,13 @@ input:focus {
           
 	<h1>Login</h1>
         <h:outputText value="Email"/>
-        <h:inputText a:placeholder="Email" required="required" value="#{customer.email}"/><br/>
+        <h:inputText a:placeholder="Email" required="required" value="#{admin.email}"/><br/>
         
         <h:outputText value="Password"></h:outputText>
-        <h:inputSecret a:placeholder="Password" required="required" value="#{customer.password}"/><br/>
+        <h:inputSecret a:placeholder="Password" required="required" value="#{admin.password}"/><br/>
         
         <h:outputText value=""></h:outputText>
-        <h:commandButton value="Login" class="btn btn-primary btn-block btn-large" action="#{customer.login_customer()}"/>&nbsp;
+        <h:commandButton value="Login" class="btn btn-primary btn-block btn-large" action="#{admin.login_admin()}"/>&nbsp;
         </h:form>
     </h:body>
 </html>

@@ -10,26 +10,26 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import pojo.Customer;
+import pojo.Admin;
 import pojo.wareHouseUtil;
 
 /**
  *
  * @author miqba
  */
-public class DAOcustomer {
-    public List<Customer> getBy(String uEmail, String uPass) {
+public class DAOadmin {
+    public List<Admin> getBy(String uEmail, String uPass) {
         Transaction trans = null;
-        Customer us = new Customer();
-        List<Customer> user = new ArrayList();
+        Admin us = new Admin();
+        List<Admin> user = new ArrayList();
         Session session = wareHouseUtil.getSessionFactory().openSession();
         
         try {
             trans = session.beginTransaction();
-            Query query = session.createQuery("from Customer where email=:uEmail AND password=:uPass");
+            Query query = session.createQuery("from Admin where email=:uEmail AND password=:uPass");
             query.setString("uEmail", uEmail);
             query.setString("uPass", uPass);
-            us = (Customer) query.uniqueResult();
+            us = (Admin) query.uniqueResult();
             user = query.list();
             trans.commit();
         } catch (Exception e) {
@@ -38,7 +38,7 @@ public class DAOcustomer {
         return user;
     }
     
-    public String add_customer(Customer user) {
+    public String add_customer(Admin user) {
          Transaction trans = null;
         Session session = wareHouseUtil.getSessionFactory().openSession();
         try {
